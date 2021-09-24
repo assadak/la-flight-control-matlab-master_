@@ -11,3 +11,6 @@ approx = PolyApprox(2.5, 2, 2);
 % cheb_points = approx.cheb_points(3, 0, 1)
 
 approx.approx_test()
+
+
+%%%
