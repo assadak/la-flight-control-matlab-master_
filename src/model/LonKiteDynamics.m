@@ -12,6 +12,7 @@ classdef LonKiteDynamics < LonKiteParams
         phyLBU          % Physical Lower control bound
         
         sys             % Struct containing system properties
+     
         
     end
     
@@ -22,7 +23,7 @@ classdef LonKiteDynamics < LonKiteParams
             
             obj.stateRep = state_rep;
             
-            switch (obj.stateRep)
+            switch (obj.stateRep) %% chooses the state representation that is specified out of the 3 given
                 
                 case 'Flightpath'
                     sys.StateName = {'Va' 'alpha' 'q' 'gamma'};
@@ -51,7 +52,7 @@ classdef LonKiteDynamics < LonKiteParams
             sys.OutputUnit = sys.StateUnit;
             obj.sys = sys;
             
-            obj.phyUBU = [0.3665, 6.1];
+            obj.phyUBU = [0.3665, 6.1]; %% upper and lower bound limit
             obj.phyLBU = [-0.3665, 0];
             
             obj.defaultState = [12; -0.05; -0.05; -0.05]; % Valid for all state representations

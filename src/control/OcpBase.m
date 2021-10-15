@@ -172,6 +172,9 @@ classdef OcpBase
             end
         end
         
+        
+        
+        
         % Getters for solution parts
         function u = get_u0(obj)
             u = obj.sol.value( obj.U_sym(:,1) );
@@ -191,6 +194,9 @@ classdef OcpBase
             [X, T] = obj.transcription.get_state_trajectory_impl(Xopt, Topt, dt);
         end
     end
+    
+    
+    
     
     methods (Access = private)
         function cost = stage_cost_impl(obj, x, u)

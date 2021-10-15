@@ -2,7 +2,7 @@ clear all
 close all
 clc
 
-addpath(fullfile('3rd_party', 'YAMLMatlab_0.4.3'))
+addpath(fullfile('3rd_party', 'YAMLMatlab_0.4.3')) %% just adding path to needed functions
 addpath(genpath('src'))
 
 %% Model initialization
@@ -99,7 +99,7 @@ controllers{2}.set_X_guess( repmat(x0, 1, controllers{2}.N+1) );
 controllers{3}.set_X_guess( repmat(x0, 1, controllers{3}.N) );
 
 if true
-    %% Test single controller evalution (Run this section again for warm start)
+  %% Test single controller evalution (Run this section again for warm start)
     % Note:  - Resampled trajs are not plotted afterwards, so dt is chosen to be quasi-continuous.
     %        - For piecewise constant controls, duplicate last entry for better plotting.
     nRuns = 2;

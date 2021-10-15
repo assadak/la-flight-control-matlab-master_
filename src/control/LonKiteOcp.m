@@ -14,7 +14,7 @@ classdef LonKiteOcp < OcpBase
         control_objectives
     end
     
-    methods (Access = public)
+    methods (Access = public)    %% dynamics, objective,end time, cont options, ?
         function obj = LonKiteOcp(lonKite, control_objectives, tf, opts, varargin)
             
             obj@OcpBase(lonKite, tf);
@@ -120,6 +120,19 @@ classdef LonKiteOcp < OcpBase
                 height_err = obj.p_sym.config.h_ref -(-x(6));
                 non_control_cost = non_control_cost + obj.p_sym.tuning.W_h_err * height_err^2;
             end
+            
+            
+        %% add my code here?
+% does it itirate over this file or it just takes the difference of the
+% whole vector at once?
+
+            
+            
+            
+            
+            
+            
+            
         end
         
         function control_cost = get_control_cost(obj, u)
